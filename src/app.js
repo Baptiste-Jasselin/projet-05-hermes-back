@@ -1,6 +1,7 @@
 // [ Node imports ]
 import { fileURLToPath } from 'url';
 import path from 'path';
+import cors from 'cors';
 
 // [ Package imports ]
 import 'dotenv/config';
@@ -16,6 +17,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const STATIC_DIR = path.join(__dirname, '../../projet-05-hermes-front/dist');
 
 const app = express();
+
+app.use(cors());
 
 app.use(cookieParser()); // Parse cookies
 
